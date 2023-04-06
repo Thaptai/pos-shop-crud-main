@@ -1,0 +1,136 @@
+.table-product {
+  width: calc(60% - 20px);
+  padding: 10px;
+  min-height: calc(100vh - 74px);
+  position: relative;
+  margin-left: 17%;
+  margin-top: 50px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 18px;
+}
+
+tr:nth-child(1) {
+  background: rgb(85, 85, 85);
+}
+
+th {
+  color: white;
+}
+th,
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 12px;
+}
+
+td {
+  cursor: pointer;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(248, 248, 248);
+}
+
+tr:not(:nth-child(1)):hover {
+  background-color: #2c73d1;
+  color: white;
+}
+
+.edit-product {
+  position: fixed;
+  /* bottom: 0px; */
+  top: 50px;
+  bottom: 20px;
+  right: 0;
+  width: 23%;
+  max-height: 100vh;
+  border-left: 1px solid #ececec;
+  overflow-y: scroll;
+  /* padding-bottom: 40px 0; */
+}
+.edit-product .section-img {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  border-bottom: 1px solid #ececec;
+  margin-top: 10px;
+}
+.edit-product .section-img img {
+  height: 200px;
+  max-width: 100%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+.edit-product .section-detail {
+  width: calc(100% - 40px);
+  padding: 0 20px;
+}
+
+.edit-product .section-detail input {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: calc(100% - 20px);
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 3px;
+}
+.edit-product .section-detail select {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: calc(100% + 2px);
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 3px;
+  appearance: none;
+  cursor: pointer;
+}
+.select-wrapper {
+  position: relative;
+}
+.select-wrapper::after {
+  content: "▼";
+  font-size: 14px;
+  top: 14px;
+  right: 14px;
+  position: absolute;
+}
+.edit-product .section-detail input:focus,
+.edit-product .section-detail select:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.edit-product .section-detail button,
+.btn-upload {
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+.btn-upload {
+  padding: 5px 10px;
+  background: rgb(20, 126, 212);
+}
+.btn-edit {
+  background: rgb(17, 160, 17);
+}
+.btn-delete {
+  background: rgb(226, 17, 17);
+}
+.btn-reset {
+  background: rgb(204, 172, 28);
+}
+.btn-edit:hover {
+  background: rgb(10, 194, 10);
+}
+.btn-delete:hover {
+  background: red;
+}
+.btn-reset:hover {
+  background: rgb(236, 194, 5);
+}

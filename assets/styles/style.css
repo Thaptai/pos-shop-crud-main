@@ -1,0 +1,453 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: inline;
+  width: 100%;
+}
+
+.nav-top {
+  width: 100%;
+  background: rgb(11, 100, 184);
+  height: 50px;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  z-index: 3;
+}
+.nav-top > div {
+  /* margin-right: 40px; */
+  flex: 1;
+}
+.nav-top .center {
+  text-align: center;
+}
+.nav-top .right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 30px;
+  height: 100%;
+  padding: 0 10px;
+  position: relative;
+}
+
+.nav-top .user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 10px;
+}
+
+.nav-top .user:hover {
+  background: black;
+  cursor: pointer;
+}
+
+.nav-top .right .avatar {
+  width: 25px;
+  height: 25px;
+}
+.nav-top .right span {
+  margin-left: 10px;
+}
+.nav-top .right .login-btn {
+  border: 0;
+  background: white;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 4px 10px;
+  transition: 0.2s;
+}
+.nav-top .right .login-btn:hover {
+  background: orange;
+  color: white;
+}
+
+.nav-top .dropdown-content {
+  position: absolute;
+  background: rgb(35, 35, 50);
+  bottom: -70px;
+  min-height: 35px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  font-size: 14px;
+  justify-content: center;
+  right: 10px;
+}
+.nav-top .dropdown-content button {
+  background: transparent;
+  color: white;
+  width: 120px;
+  height: 35px;
+  border: 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.nav-top .dropdown-content button:hover {
+  background: black;
+}
+
+.nav-top .user:hover ~ .dropdown-content {
+  display: flex;
+}
+
+.nav-top .dropdown-content:hover {
+  display: flex;
+}
+
+ีul,
+.product,
+.pay {
+  /* top: 50px; */
+}
+
+ul {
+  width: 17%;
+  height: 100vh;
+  background: rgb(35, 35, 50);
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  padding-top: 50px;
+  z-index: 2;
+}
+ul li {
+  list-style: none;
+  width: 100%;
+}
+ul li a {
+  color: rgb(202, 202, 202);
+  display: block;
+  text-decoration: none;
+  padding: 20px 0;
+  padding-left: 50px;
+  transition: 0.1s;
+}
+ul li:hover {
+  background: rgb(10, 10, 20);
+}
+ul li:hover > a{
+  color: white;
+}
+ul li.active{
+  background: rgb(10, 10, 20);
+}
+ul li.active a{
+  color: white;
+}
+
+.product {
+  width: calc(60% - 20px);
+  padding: 10px;
+  /* min-height: 100vh; */
+  height: 100%;
+  position: relative;
+  margin-left: 17%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+.product .card {
+  border-radius: 10px;
+  width: 100%;
+  height: 300px;
+  cursor: pointer;
+  position: relative;
+}
+.product .card .img {
+  width: 100%;
+  height: 70%;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.product .card .detail {
+  width: 100%;
+  max-height: calc(30% - 20px);
+  padding: 10px 0;
+  background: white;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.product .card:hover > .img {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+}
+.product .card:hover > .detail {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+}
+
+.product .card .count-product {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.product .card .count-product > div {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid white;
+  width: calc(100% - 20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product .card .count-product > div:nth-child(2) {
+  background: rgb(255, 158, 158);
+}
+.product .card .count-product > div:nth-child(2):hover {
+  background: red;
+}
+
+.pay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 23%;
+  min-height: 100vh;
+  background: rgb(250, 250, 250);
+  margin-top: 50px;
+  border-left: 1px solid #ececec;
+  border-top-left-radius: 40px;
+}
+.pay .section-banner{
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: url('../img/banner/119660833_3250797521702170_6073484810134221837_n.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+/* .pay .section-banner img{
+  width: 100%;
+  height: auto;
+} */
+.pay .section-total{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
+  background: white;
+}
+.pay .section-total span:nth-child(1){
+  font-size: 16px;
+  color: rgba(0, 0, 0, .5);
+}
+.pay .section-total span:nth-child(2){
+  font-weight: bold;
+}
+
+.pay .section-input{
+  width: calc(100% - 40px);
+  padding: 20px;
+}
+
+.pay .section-input span{
+  font-size: 18px;
+  color: rgba(0, 0, 0, .6);
+}
+
+.pay .section-input input{
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 3px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, .7);
+  padding: 10px 0;
+  text-align: center;
+  width: 20%;
+  margin-left: 20px;
+}
+
+.pay .btn-pay-submit{
+  border: 0;
+  width: 90%;
+  margin-top: 40px;
+  margin-left: 5%;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: rgb(8, 202, 89);
+  font-size: 28px;
+  color: white;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, .6);
+  transition: .1s;
+}
+.pay .btn-pay-submit:hover{
+  background: rgb(9, 150, 67);
+}
+.pay .btn-pay-clear{
+  border: 0;
+  width: 90%;
+  margin-top: 40px;
+  margin-left: 5%;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: rgb(255, 59, 52);
+  font-size: 28px;
+  color: white;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, .6);
+  transition: .1s;
+}
+.pay .btn-pay-clear:hover{
+  background: rgb(206, 23, 23);
+}
+
+.searchBox{
+  width: calc(60% - 20px);
+  height: auto;
+  position: relative;
+  margin-left: 17%;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, .15);
+}
+.searchBox .formSearch{
+  width: calc(25% - 20px);
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  font-size: 18px;
+}
+.searchBox select {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: calc(100% + 2px);
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+}
+.searchBox .btnSubmitSearch{
+  width: calc(10% - 20px);
+  border: 0;
+  padding: 11px;
+  font-size: 16px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, .7);
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.searchBox .btnSubmitSearch:hover{
+  background: rgba(0, 0, 0, .2)
+}
+.searchBox .select-wrapper {
+  margin-left: 10px;
+  width: 20%;
+  position: relative;
+}
+.searchBox .select-wrapper::after {
+  content: "▼";
+  font-size: 14px;
+  top: 14px;
+  right: 14px;
+  position: absolute;
+}
+
+.modalPay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .7);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: modalFade .2s linear;
+}
+.modalPay .box{
+  width: calc(30% - 80px);
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalPay .box input{
+  width: calc(100% - 20px);
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 5px;
+  padding: 15px 10px;
+  outline: none;
+  font-size: 18px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, .1);
+  text-align: center;
+  font-weight: bold;
+}
+.modalPay .box input:focus{
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+}
+
+.modalPay .box .box-btn{
+  display: flex;
+  width: 100%;
+}
+
+.modalPay .box .box-btn button{
+  flex: 1;
+  border: 0;
+  padding: 15px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, .7);
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: .1s;
+  color: white;
+}
+.modalPay .box .box-btn button:nth-child(1){
+  background: rgb(19, 175, 84);
+}
+.modalPay .box .box-btn button:nth-child(1):hover{
+  background: rgb(13, 202, 92);
+}
+.modalPay .box .box-btn button:nth-child(2){
+  margin-left: 5px;
+  background: rgb(212, 52, 30);
+}
+.modalPay .box .box-btn button:nth-child(2):hover{
+  background: rgb(253, 30, 0);
+}
+
+@keyframes modalFade{
+  from{
+    opacity: 0;
+  } to{
+    opacity: 1;
+  }
+}
